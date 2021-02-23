@@ -19,7 +19,7 @@ class BookObserver
     {
         //
         Log::debug('Book inserted ' . $book->goodreads_book_id);
-        $good=simplexml_load_string(file_get_contents('https://www.goodreads.com/book/show/' . str_replace(" ","+",$book->goodreads_book_id) . '.xml?key=C3SzR3sjAlLvr8fx0V3EKA'),'SimpleXMLElement', LIBXML_NOCDATA | LIBXML_NOBLANKS);
+/*         $good=simplexml_load_string(file_get_contents('https://www.goodreads.com/book/show/' . str_replace(" ","+",$book->goodreads_book_id) . '.xml?key=C3SzR3sjAlLvr8fx0V3EKA'),'SimpleXMLElement', LIBXML_NOCDATA | LIBXML_NOBLANKS);
         $BookModel = Book::find($book->id);
         
         $BookModel->isbn = (string) $good->book->isbn;
@@ -60,7 +60,7 @@ class BookObserver
 
             }
             
-        }
+        } */
 
         Log::debug('Book updated ' . $book->goodreads_book_id);
 

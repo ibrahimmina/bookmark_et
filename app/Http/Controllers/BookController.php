@@ -245,7 +245,7 @@ class BookController extends Controller
 
         $Books =  $BooksTitleISBN->merge($BooksAuthor);
 
-        $good=simplexml_load_string(file_get_contents('https://www.goodreads.com/search/index.xml?key=C3SzR3sjAlLvr8fx0V3EKA&q=' . str_replace(" ","+",$item)),'SimpleXMLElement', LIBXML_NOCDATA | LIBXML_NOBLANKS);
+/*         $good=simplexml_load_string(file_get_contents('https://www.goodreads.com/search/index.xml?key=C3SzR3sjAlLvr8fx0V3EKA&q=' . str_replace(" ","+",$item)),'SimpleXMLElement', LIBXML_NOCDATA | LIBXML_NOBLANKS);
 
         for ($i = 0; $i < count($good->search->results->work); $i++) {
             if ( $Books->where('title',(string) $good->search->results->work[$i]->best_book->title)->count() == 0 ){
@@ -260,7 +260,7 @@ class BookController extends Controller
                 $bookone = \App\Book::select('id', 'title', 'image_url')->where('id',$bookid)->get();
                 $Books = $Books->merge($bookone);
             }
-        }
+        } */
 
         return view('pages.bookcardcollection', ['PageSettings' => $PageSettings, 'Books' => $Books]);
 
