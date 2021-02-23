@@ -1,5 +1,12 @@
 <?php
 use Illuminate\Database\Seeder;
+
+use App\Product;
+use App\Address;
+use App\Book;
+use App\Author;
+use App\BookAuthor;
+
 class ProductTableSeeder extends Seeder
 {
     /**
