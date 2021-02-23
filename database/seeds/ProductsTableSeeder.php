@@ -7,7 +7,7 @@ use App\Book;
 use App\Author;
 use App\BookAuthor;
 
-class ProductTableSeeder extends Seeder
+class ProductsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
