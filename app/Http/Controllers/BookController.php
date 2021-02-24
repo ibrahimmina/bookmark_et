@@ -131,7 +131,7 @@ class BookController extends Controller
         $Products = \App\Book::find($id)->products()->orderBy('price', 'asc')->get();
 
         foreach($Products as $Product){
-            $Images[$Product->id] =   File::allFiles("/bitnami/bookmarket/public/productimages/" . $Product->id); 
+            $Images[$Product->id] =   File::allFiles(public_path() . "productimages/" . $Product->id); 
         }
 
         $Authors = \App\Book::find($id)->authors()->get();
